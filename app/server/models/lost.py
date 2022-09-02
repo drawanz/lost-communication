@@ -15,7 +15,7 @@ class LostSchema(BaseModel):
     evento: str = Field(...)
 
 
-class UpdateStudentModel(BaseModel):
+class UpdateLostSchema(BaseModel):
     nome: str = Field(...)
     email: EmailStr = Field(...)
     CPF: int = Field(...)
