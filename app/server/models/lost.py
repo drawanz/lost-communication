@@ -26,10 +26,10 @@ class UpdateStudentModel(BaseModel):
     evento: str = Field(...)
 
 
-def ResponseModel(data, message):
+def ResponseModel(code, data, message):
     return {
+        "code": code,
         "data": [data],
-        "code": 200,
         "message": message,
     }
 
