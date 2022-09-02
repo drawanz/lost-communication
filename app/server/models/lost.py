@@ -1,5 +1,4 @@
 from datetime import date
-from typing import Optional
 
 from pydantic import BaseModel, EmailStr, Field
 
@@ -11,7 +10,7 @@ class LostSchema(BaseModel):
     latitude: float = Field(...)
     longitude: float = Field(...)
     lavoura: str = Field(...)
-    data_colheita: date = Field(...)
+    data_colheita: str = Field(...)
     evento: str = Field(...)
 
 
@@ -22,7 +21,7 @@ class UpdateLostSchema(BaseModel):
     latitude: float = Field(...)
     longitude: float = Field(...)
     lavoura: str = Field(...)
-    data_colheita: date = Field(...)
+    data_colheita: str = Field(...)
     evento: str = Field(...)
 
 
