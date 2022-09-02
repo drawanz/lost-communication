@@ -31,7 +31,3 @@ def ResponseModel(code, data, message):
         "data": [data],
         "message": message,
     }
-
-
-def ErrorResponseModel(error, code, message):
-    return {"error": error, "code": code, "message": message}

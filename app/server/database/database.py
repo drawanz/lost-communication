@@ -1,14 +1,8 @@
-import motor.motor_asyncio
-
 from helpers.helpers import lost_communication_helper
 
-conn_str = "mongodb+srv://drawanz:91683711@cluster0.lyevp6n.mongodb.net/?retryWrites=true&w=majority"
 
-client = motor.motor_asyncio.AsyncIOMotorClient(conn_str, serverSelectionTimeoutMS=5000)
+from server.database.connection_config import lost_collection
 
-database = client.lost
-
-lost_collection = database.get_collection("lost_collection")
 
 # Retrieve all lost communications in the database
 async def retrieve_lost_communications():

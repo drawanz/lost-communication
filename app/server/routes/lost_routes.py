@@ -2,7 +2,7 @@ from fastapi import APIRouter, Body, HTTPException
 from fastapi.encoders import jsonable_encoder
 
 
-from server.database import (
+from server.database.database import (
     retrieve_lost_communications,
     add_lost_communication,
     retrieve_lost_communication,
