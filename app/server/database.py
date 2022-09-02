@@ -43,9 +43,7 @@ async def update_lost_communication(CPF: int, data: dict):
         return False
     lost = await lost_collection.find_one({"CPF": (CPF)})
     if lost:
-        updated_lost = await lost_collection.update_one(
-            {"CPF": (CPF)}, {"$set": data}
-        )
+        updated_lost = await lost_collection.update_one({"CPF": (CPF)}, {"$set": data})
         if updated_lost:
             return True
         return False
