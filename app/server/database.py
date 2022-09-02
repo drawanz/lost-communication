@@ -1,6 +1,6 @@
 import motor.motor_asyncio
 
-from app.helpers.helpers import lost_communication_helper
+from helpers.helpers import lost_communication_helper
 
 conn_str = "mongodb+srv://drawanz:91683711@cluster0.lyevp6n.mongodb.net/?retryWrites=true&w=majority"
 

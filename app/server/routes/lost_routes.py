@@ -2,7 +2,7 @@ from fastapi import APIRouter, Body
 from fastapi.encoders import jsonable_encoder
 
 
-from app.server.database import (
+from server.database import (
     retrieve_lost_communications,
     add_lost_communication,
     retrieve_lost_communication,
@@ -11,7 +11,7 @@ from app.server.database import (
 )
 
 
-from app.server.models.lost import (
+from server.models.lost import (
     ResponseModel,
     UpdateLostSchema,
     LostSchema,
