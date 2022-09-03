@@ -1,4 +1,5 @@
-from helpers.helpers import lost_communication_helper
+from fastapi import HTTPException
+from helpers.helpers import lost_communication_helper, get_distance
 
 
 from server.database.connection_config import lost_collection
@@ -16,6 +17,22 @@ async def retrieve_lost_communications():
 
 # Add a new lost communication into to the database
 async def add_lost_communication(lost_data: dict) -> dict:
+    losts = []
+    async for lost in lost_collection.find(
+        {"data_colheita": lost_data["data_colheita"]}
+    ):
+        losts.append(lost_communication_helper(lost))
+    for lost in losts:
+        if (
+            get_distance(
+                lost["latitude"],
+                lost["longitude"],
+                lost_data["latitude"],
+                lost_data["longitude"],
+            )
+            < 10
+        ):
+            raise HTTPException(400, "The distance is less than 10km")
     lost = await lost_collection.insert_one(lost_data)
     new_lost = await lost_collection.find_one({"_id": lost.inserted_id})
     if new_lost:
@@ -33,8 +50,6 @@ async def retrieve_lost_communication(CPF: str) -> dict:
 
 # Update a lost communication with a matching CPF
 async def update_lost_communication(CPF: int, data: dict):
-    # if len(data) < 1:
-    #     return False
     lost = await lost_collection.find_one({"CPF": int(CPF)})
     if lost:
         updated_lost = await lost_collection.update_one({"CPF": (CPF)}, {"$set": data})

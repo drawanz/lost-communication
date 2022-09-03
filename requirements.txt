@@ -7,3 +7,5 @@ motor == 3.0.0
 pydantic[email]
 
 python-decouple == 3.6
+
+geopy == 2.2.0
