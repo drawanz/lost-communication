@@ -21,4 +21,6 @@ app.include_router(LostRouter, tags=["Lost"], prefix="/lost")
 
 @app.get("/", tags=["Root"])
 async def read_root():
-    return {"message": "Welcome to Softfocus Lost Communication"}
+    return {
+        "message": "Welcome to Softfocus Lost Communication, to use the API please check the documentation at /docs"
+    }
