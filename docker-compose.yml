@@ -1,0 +1,8 @@
+version: '3.8'
+services:
+  app:
+    container_name: lost-communication-api
+    build: .
+    ports:
+      - "8000:8000"
+    command: python3 app/main.py
