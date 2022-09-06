@@ -32,7 +32,10 @@ async def add_lost_communication(lost_data: dict) -> dict:
             )
             < 10
         ):
-            raise HTTPException(400, "The distance is less than 10km")
+            raise HTTPException(
+                400,
+                "Uma perda já foi cadastrada no dia de hoje com uma distância nferior a 10 quilômetros",
+            )
     lost = await lost_collection.insert_one(lost_data)
     new_lost = await lost_collection.find_one({"_id": lost.inserted_id})
     if new_lost:
