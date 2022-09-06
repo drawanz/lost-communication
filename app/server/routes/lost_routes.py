@@ -26,8 +26,8 @@ async def add_lost_data(lost: LostSchema = Body(...)):
     lost_communication = jsonable_encoder(lost)
     new_lost = await add_lost_communication(lost_communication)
     if new_lost:
-        return ResponseModel(200, new_lost, "Lost communication created")
-    raise HTTPException(400, "There is something wrong with the body data")
+        return ResponseModel(200, new_lost, "Comunicação de perda criada!")
+    raise HTTPException(400, "Há algo de errado com o body da requisição!")
 
 
 # Read
@@ -35,8 +35,10 @@ async def add_lost_data(lost: LostSchema = Body(...)):
 async def get_all_losts_data():
     losts = await retrieve_lost_communications()
     if losts:
-        return ResponseModel(200, losts, "All losts communications in the database")
-    raise HTTPException(404, "Not possible to find any data")
+        return ResponseModel(
+            200, losts, "Todas as comunicações de perda do banco de dados."
+        )
+    raise HTTPException(404, "Nenhum dado encontrado")
 
 
 @router.get(
@@ -45,10 +47,8 @@ async def get_all_losts_data():
 async def get_a_lost_data(cpf: str):
     lost = await retrieve_lost_communication(int(cpf))
     if lost:
-        return ResponseModel(
-            200, lost, "Lost communication data retrieved successfully"
-        )
-    raise HTTPException(404, "Lost communication doesn't exist.")
+        return ResponseModel(200, lost, "Comunicação de perda encontrada com sucesso!")
+    raise HTTPException(404, "Nenhuma comunicação de perda encontrada!")
 
 
 # Update
@@ -60,10 +60,11 @@ async def update_a_lost_data(cpf: str, req: UpdateLostSchema = Body(...)):
     update_lost = await update_lost_communication(int(cpf), req)
     if update_lost:
         return ResponseModel(
-            200, update_lost, f"Lost communication data of CPF:{cpf} updated"
+            200, update_lost, f"Comunicação de perda do CPF:{cpf} atualizada!"
         )
     raise HTTPException(
-        404, "Not possible to find CPF or the body request is incompleted"
+        404,
+        "Não foi possível atualizar a comunicação de perda ou o body da requisição está incompleto!",
     )
 
 
@@ -75,6 +76,6 @@ async def delete_a_lost_data(cpf: str):
     deleted_lost = await delete_lost_communication(int(cpf))
     if deleted_lost:
         return ResponseModel(
-            200, deleted_lost, f"Lost communication data of CPF:{cpf} deleted"
+            200, deleted_lost, f"Comunicação de perda do CPF:{cpf} deletada!"
         )
-    raise HTTPException(404, "Not possible to find CPF")
+    raise HTTPException(404, f"Não foi possível encontrar o CPF:{cpf}")
