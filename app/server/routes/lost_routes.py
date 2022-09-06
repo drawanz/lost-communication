@@ -70,7 +70,7 @@ async def update_a_lost_data(cpf: str, req: UpdateLostSchema = Body(...)):
 
 # Delete
 @router.delete(
-    "/{cpf", response_description="Lost communication data deleted from the database"
+    "/{cpf}", response_description="Lost communication data deleted from the database"
 )
 async def delete_a_lost_data(cpf: str):
     deleted_lost = await delete_lost_communication(int(cpf))
