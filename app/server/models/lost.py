@@ -6,7 +6,7 @@ from pydantic import BaseModel, EmailStr, Field
 class LostSchema(BaseModel):
     nome: str = Field(...)
     email: EmailStr = Field(...)
-    CPF: int = Field(...)
+    CPF: str = Field(...)
     latitude: float = Field(...)
     longitude: float = Field(...)
     lavoura: str = Field(...)
@@ -17,7 +17,7 @@ class LostSchema(BaseModel):
 class UpdateLostSchema(BaseModel):
     nome: str = Field(...)
     email: EmailStr = Field(...)
-    CPF: int = Field(...)
+    CPF: str = Field(...)
     latitude: float = Field(...)
     longitude: float = Field(...)
     lavoura: str = Field(...)

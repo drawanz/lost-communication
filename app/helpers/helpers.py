@@ -6,7 +6,7 @@ def lost_communication_helper(lost) -> dict:
         "id": str(lost["_id"]),
         "nome": lost["nome"],
         "email": lost["email"],
-        "CPF": int(lost["CPF"]),
+        "CPF": str(lost["CPF"]),
         "latitude": lost["latitude"],
         "longitude": lost["longitude"],
         "lavoura": lost["lavoura"],
