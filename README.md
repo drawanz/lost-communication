@@ -37,3 +37,7 @@ FastApi em conjunto com o MongoDB, e tem como objetivo a versão simplificada de
 - Na variável de ambiente `PORT` insira a porta na qual deseja rodar localmente o projeto;
 - Rode o comando `python3 app/main.py`;
 - Se tudo deu certo até aqui, você verá a sua aplicação rodando em: `http://0.0.0.0:*PORT*`
+
+## Linceça
+
+ - O presente projeto está sob a ![](app/
