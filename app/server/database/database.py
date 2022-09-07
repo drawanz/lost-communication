@@ -45,15 +45,15 @@ async def add_lost_communication(lost_data: dict) -> dict:
 
 # Retrieve a lost communication with a matching CPF
 async def retrieve_lost_communication(CPF: str) -> dict:
-    lost = await lost_collection.find_one({"CPF": (CPF)})
+    lost = await lost_collection.find_one({"CPF": int(CPF)})
     if lost:
         return lost_communication_helper(lost)
     return False
 
 
 # Update a lost communication with a matching CPF
-async def update_lost_communication(CPF: str, data: dict):
-    lost = await lost_collection.find_one({"CPF": (CPF)})
+async def update_lost_communication(CPF: int, data: dict):
+    lost = await lost_collection.find_one({"CPF": int(CPF)})
     if lost:
         updated_lost = await lost_collection.update_one({"CPF": (CPF)}, {"$set": data})
         if updated_lost:
@@ -63,7 +63,7 @@ async def update_lost_communication(CPF: str, data: dict):
 
 
 # Delete a lost communication from the database
-async def delete_lost_communication(CPF: str):
+async def delete_lost_communication(CPF: int):
     lost = await lost_collection.find_one({"CPF": (CPF)})
     if lost:
         await lost_collection.delete_one({"CPF": (CPF)})
