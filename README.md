@@ -37,4 +37,4 @@
 
 ## Linceça
 
-- O presente projeto está sob a ![Licença MIT](./LICENSE);
+- O presente projeto está sob a [Licença MIT](./LICENSE);
