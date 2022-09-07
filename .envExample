@@ -1,1 +1,2 @@
 MONGO_DETAILS="string connection from mongodb atlas"
+PORT=porta de conexão
