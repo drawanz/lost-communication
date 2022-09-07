@@ -35,6 +35,6 @@
 - Rode o comando `python3 app/main.py`;
 - Se tudo deu certo até aqui, você verá a sua aplicação rodando em: `http://0.0.0.0:*PORT*`
 
-## Linceça
+## Licença
 
 - O presente projeto está sob a [Licença MIT](./LICENSE);
