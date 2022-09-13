@@ -2,7 +2,7 @@
 
 ## Apresentação do projeto
 
-- Lost communication é um CRUID API, criada por mim como resultado de um teste técnico. A aplicação foi desenvolvida em python, utilizando o framework
+- Lost communication é um CRUD API, criada por mim como resultado de um teste técnico. A aplicação foi desenvolvida em python, utilizando o framework
   FastApi em conjunto com o MongoDB, e tem como objetivo a versão simplificada de uma comunicação de perda de um produtor rural para o programa Proagro Fácil.
 
 ## Diferenciais
