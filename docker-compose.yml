@@ -4,5 +4,5 @@ services:
     container_name: lost-communication-api
     build: .
     ports:
-      - "8000:8000"
+      - "8000:3000"
     command: python3 app/main.py

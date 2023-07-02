@@ -31,9 +31,8 @@
 - Na raiz do projeto rode o comando: `pip3 install -r requirements.txt`;
 - Altere o nome do arquivo .envExample na raiz do projeto para `.env`;
 - Na variável de ambiente `MONGO_DETAILS` insira a sua string de conexão com o Atlas (MongoDB);
-- Na variável de ambiente `PORT` insira a porta na qual deseja rodar localmente o projeto;
 - Rode o comando `python3 app/main.py`;
-- Se tudo deu certo até aqui, você verá a sua aplicação rodando em: `http://0.0.0.0:*PORT*`
+- Se tudo deu certo até aqui, você verá a sua aplicação rodando em: `http://0.0.0.0:8000`
 
 ## Licença
 
